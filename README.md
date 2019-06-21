@@ -1,7 +1,7 @@
 <p align="center">
 	<b>Biorhythm</b>
 	<br>
-	<i>A tool that calculates your biorhythms (physical, emotional and intellectual),</i>
+	<i>A tool that calculates your biorhythms (physical, emotional and intellectual).</i>
 	<br><br>
 	<img alt="screenshot" src="media/screenshot.gif">
 </p>
