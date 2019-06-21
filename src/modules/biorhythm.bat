@@ -33,18 +33,21 @@ mode 80,25 & setlocal EnableDelayedExpansion
 	if "!physical:~0,3!" equ "-1." (set "physical_yesterday=-100") else (if "!physical:~0,2!" equ "1." (set "physical_yesterday=100"))
 	if "!physical:~0,1!" equ "." (if "!physical:~1,1!" equ "0" (set "physical_yesterday=!physical:~2,1!") else (set "physical_yesterday=!physical:~1,2!"))
 	if "!physical:~1,1!" equ "." if "!physical:~0,1!" equ "-" (if "!physical:~2,2!" equ "00" (set "physical_yesterday=!physical:~2,2!") else (set "physical_yesterday=-!physical:~2,2!"))
+	if "%physical_yesterday%" equ "00" set "physical_yesterday=0"
 	echo s(2*(4*a(1))*%daydiff%/28) | bc.exe -l > "emotional.txt"
 	for /f %%i in (emotional.txt) do set "emotional=%%i"
 	set "emotional=!emotional:~0,4!
 	if "!emotional:~0,3!" equ "-1." (set "emotional_yesterday=-100") else (if "!emotional:~0,2!" equ "1." (set "emotional_yesterday=100"))
 	if "!emotional:~0,1!" equ "." (if "!emotional:~1,1!" equ "0" (set "emotional_yesterday=!emotional:~2,1!") else (set "emotional_yesterday=!emotional:~1,2!"))
 	if "!emotional:~1,1!" equ "." if "!emotional:~0,1!" equ "-" (if "!emotional:~2,2!" equ "00" (set "emotional_yesterday=!emotional:~2,2!") else (set "emotional_yesterday=-!emotional:~2,2!"))
+	if "%emotional_yesterday%" equ "00" set "emotional_yesterday=0"
 	echo s(2*(4*a(1))*%daydiff%/33) | bc.exe -l > "intellectual.txt"
 	for /f %%i in (intellectual.txt) do set "intellectual=%%i"
 	set "intellectual=!intellectual:~0,4!
 	if "!intellectual:~0,3!" equ "-1." (set "intellectual_yesterday=-100") else (if "!intellectual:~0,2!" equ "1." (set "intellectual_yesterday=100"))
 	if "!intellectual:~0,1!" equ "." (if "!intellectual:~1,1!" equ "0" (set "intellectual_yesterday=!intellectual:~2,1!") else (set "intellectual_yesterday=!intellectual:~1,2!"))
 	if "!intellectual:~1,1!" equ "." if "!intellectual:~0,1!" equ "-" (if "!intellectual:~2,2!" equ "00" (set "intellectual_yesterday=!intellectual:~2,2!") else (set "intellectual_yesterday=-!intellectual:~2,2!"))
+	if "%intellectual_yesterday%" equ "00" set "intellectual_yesterday=0"
 	for %%i in (physical	emotional	intellectual) do del /f /q "%%i.txt" >nul
 	
 	set /a daydiff+=1
@@ -54,18 +57,21 @@ mode 80,25 & setlocal EnableDelayedExpansion
 	if "!physical:~0,3!" equ "-1." (set "physical_today=-100") else (if "!physical:~0,2!" equ "1." (set "physical_today=100"))
 	if "!physical:~0,1!" equ "." (if "!physical:~1,1!" equ "0" (set "physical_today=!physical:~2,1!") else (set "physical_today=!physical:~1,2!"))
 	if "!physical:~1,1!" equ "." if "!physical:~0,1!" equ "-" (if "!physical:~2,2!" equ "00" (set "physical_today=!physical:~2,2!") else (set "physical_today=-!physical:~2,2!"))
+	if "%physical_today%" equ "00" set "physical_today=0"
 	echo s(2*(4*a(1))*%daydiff%/28) | bc.exe -l > "emotional.txt"
 	for /f %%i in (emotional.txt) do set "emotional=%%i"
 	set "emotional=!emotional:~0,4!
 	if "!emotional:~0,3!" equ "-1." (set "emotional_today=-100") else (if "!emotional:~0,2!" equ "1." (set "emotional_today=100"))
 	if "!emotional:~0,1!" equ "." (if "!emotional:~1,1!" equ "0" (set "emotional_today=!emotional:~2,1!") else (set "emotional_today=!emotional:~1,2!"))
 	if "!emotional:~1,1!" equ "." if "!emotional:~0,1!" equ "-" (if "!emotional:~2,2!" equ "00" (set "emotional_today=!emotional:~2,2!") else (set "emotional_today=-!emotional:~2,2!"))
+	if "%emotional_today%" equ "00" set "emotional_today=0"
 	echo s(2*(4*a(1))*%daydiff%/33) | bc.exe -l > "intellectual.txt"
 	for /f %%i in (intellectual.txt) do set "intellectual=%%i"
 	set "intellectual=!intellectual:~0,4!
 	if "!intellectual:~0,3!" equ "-1." (set "intellectual_today=-100") else (if "!intellectual:~0,2!" equ "1." (set "intellectual_today=100"))
 	if "!intellectual:~0,1!" equ "." (if "!intellectual:~1,1!" equ "0" (set "intellectual_today=!intellectual:~2,1!") else (set "intellectual_today=!intellectual:~1,2!"))
 	if "!intellectual:~1,1!" equ "." if "!intellectual:~0,1!" equ "-" (if "!intellectual:~2,2!" equ "00" (set "intellectual_today=!intellectual:~2,2!") else (set "intellectual_today=-!intellectual:~2,2!"))
+	if "%intellectual_today%" equ "00" set "intellectual_today=0"
 	for %%i in (physical	emotional	intellectual) do del /f /q "%%i.txt" >nul
 	
 	set /a daydiff+=1
@@ -75,18 +81,21 @@ mode 80,25 & setlocal EnableDelayedExpansion
 	if "!physical:~0,3!" equ "-1." (set "physical_tomorrow=-100") else (if "!physical:~0,2!" equ "1." (set "physical_tomorrow=100"))
 	if "!physical:~0,1!" equ "." (if "!physical:~1,1!" equ "0" (set "physical_tomorrow=!physical:~2,1!") else (set "physical_tomorrow=!physical:~1,2!"))
 	if "!physical:~1,1!" equ "." if "!physical:~0,1!" equ "-" (if "!physical:~2,2!" equ "00" (set "physical_tomorrow=!physical:~2,2!") else (set "physical_tomorrow=-!physical:~2,2!"))
+	if "%physical_tomorrow%" equ "00" set "physical_tomorrow=0"
 	echo s(2*(4*a(1))*%daydiff%/28) | bc.exe -l > "emotional.txt"
 	for /f %%i in (emotional.txt) do set "emotional=%%i"
 	set "emotional=!emotional:~0,4!
 	if "!emotional:~0,3!" equ "-1." (set "emotional_tomorrow=-100") else (if "!emotional:~0,2!" equ "1." (set "emotional_tomorrow=100"))
 	if "!emotional:~0,1!" equ "." (if "!emotional:~1,1!" equ "0" (set "emotional_tomorrow=!emotional:~2,1!") else (set "emotional_tomorrow=!emotional:~1,2!"))
 	if "!emotional:~1,1!" equ "." if "!emotional:~0,1!" equ "-" (if "!emotional:~2,2!" equ "00" (set "emotional_tomorrow=!emotional:~2,2!") else (set "emotional_tomorrow=-!emotional:~2,2!"))
+	if "%emotional_tomorrow%" equ "00" set "emotional_tomorrow=0"
 	echo s(2*(4*a(1))*%daydiff%/33) | bc.exe -l > "intellectual.txt"
 	for /f %%i in (intellectual.txt) do set "intellectual=%%i"
 	set "intellectual=!intellectual:~0,4!
 	if "!intellectual:~0,3!" equ "-1." (set "intellectual_tomorrow=-100") else (if "!intellectual:~0,2!" equ "1." (set "intellectual_tomorrow=100"))
 	if "!intellectual:~0,1!" equ "." (if "!intellectual:~1,1!" equ "0" (set "intellectual_tomorrow=!intellectual:~2,1!") else (set "intellectual_tomorrow=!intellectual:~1,2!"))
 	if "!intellectual:~1,1!" equ "." if "!intellectual:~0,1!" equ "-" (if "!intellectual:~2,2!" equ "00" (set "intellectual_tomorrow=!intellectual:~2,2!") else (set "intellectual_tomorrow=-!intellectual:~2,2!"))
+	if "%intellectual_tomorrow%" equ "00" set "intellectual_tomorrow=0"
 	for %%i in (physical	emotional	intellectual) do del /f /q "%%i.txt" >nul
 	
 	for %%a in ("yesterday"	"today"	"tomorrow") do (for %%i in ("physical"	"emotional"	"intellectual") do (echo %%~a_%%~i:!%%~i_%%~a!&echo !%%~i_%%~a!>>"output.txt"))
