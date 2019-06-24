@@ -15,3 +15,13 @@ Enter your birth date in **YYYY.MM.DD** format.
 
 And then run:
 > release/Biorhythm.exe
+
+# Compile
+If you want to compile it by yourself:
+1. Compile using Aut2Exe:
+> src/display.au3
+2. Convert with embedded **modules** folder using any Bat2Exe converter with these options: 
+- Visibility: **invisible application**
+- Working directory: **current**
+- Temporary files: **delete on exit**
+> src/main.bat
