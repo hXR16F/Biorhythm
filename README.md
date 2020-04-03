@@ -25,3 +25,7 @@ If you want to compile it by yourself:
 - Working directory: **current**
 - Temporary files: **delete on exit**
 > src/main.bat
+
+# Donate
+If you support my work or like my projects, you can donate me some money. Thank you 💙\
+BTC: `bc1q9trutvumrfuwrdwj377xd7u2flyp527j6t6qh9`
